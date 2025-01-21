@@ -1,10 +1,10 @@
-name: Build and Deploy Green River Demo
+name: Build and Deploy React Game
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build-and-deploy:
@@ -23,8 +23,24 @@ jobs:
       - name: Install Dependencies
         run: |
           npm ci
-          npx shadcn-ui@latest init --yes
-          npx shadcn-ui@latest add button card
+          npm install --save-dev @shadcn/ui
+          # Initialize shadcn-ui with custom config to avoid prompt
+          echo '{
+            "style": "default",
+            "rsc": false,
+            "tailwind": {
+              "config": "tailwind.config.js",
+              "css": "src/index.css",
+              "baseColor": "slate",
+              "cssVariables": true
+            },
+            "aliases": {
+              "components": "@/components",
+              "utils": "@/lib/utils"
+            }
+          }' > components.json
+          npx @shadcn/ui@latest init
+          npx @shadcn/ui@latest add button card
 
       - name: Build
         run: npm run build
