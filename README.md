@@ -1,4 +1,4 @@
-# River Trading Game - Setup Instructions
+# Green River Concept Demo - Setup Instructions
 
 ## Prerequisites
 - Node.js and npm installed on your computer
