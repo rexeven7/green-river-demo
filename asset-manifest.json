@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/green-river-demo/static/css/main.dbd00fa0.css",
+    "main.js": "/green-river-demo/static/js/main.ba043474.js",
+    "static/js/488.08f85dd0.chunk.js": "/green-river-demo/static/js/488.08f85dd0.chunk.js",
+    "index.html": "/green-river-demo/index.html",
+    "main.dbd00fa0.css.map": "/green-river-demo/static/css/main.dbd00fa0.css.map",
+    "main.ba043474.js.map": "/green-river-demo/static/js/main.ba043474.js.map",
+    "488.08f85dd0.chunk.js.map": "/green-river-demo/static/js/488.08f85dd0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dbd00fa0.css",
+    "static/js/main.ba043474.js"
+  ]
+}
