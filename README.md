@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# River Trading Game - Setup Instructions
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Prerequisites
+- Node.js and npm installed on your computer
+- A React project (you can create one using Create React App or Next.js)
 
-## Available Scripts
+## Required Dependencies
+Add these to your project using npm or yarn:
 
-In the project directory, you can run:
+```bash
+npm install @/components/ui   # For UI components
+npm install lucide-react     # For icons
+```
 
-### `npm start`
+## Required Component Setup
+This game uses components from the shadcn/ui library. You'll need to set up the following components:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Button component (`@/components/ui/button`)
+2. Card component (`@/components/ui/card`)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To install these components using shadcn/ui, run:
 
-### `npm test`
+```bash
+npx shadcn-ui@latest add button
+npx shadcn-ui@latest add card
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## File Structure
+Create the following files in your project:
 
-### `npm run build`
+1. `RiverTradingGame.tsx` - The main game component (copy the full component code)
+2. Include the component in your page:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```tsx
+import RiverTradingGame from './RiverTradingGame';
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+export default function GamePage() {
+  return (
+    <div>
+      <RiverTradingGame />
+    </div>
+  );
+}
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Game Features
+- Multiple regions (South, Central, North) with different resources and traders
+- Trading system with corn and textiles
+- Transportation options: raft, ferry, and steamboat
+- Resource gathering (wood from trees)
+- Progress system to unlock advanced features
+- Grid-based movement with river mechanics
 
-### `npm run eject`
+## Controls
+- Arrow buttons for movement
+- Action buttons appear contextually when near interactive elements:
+  - Chop Tree (near trees)
+  - Build/Board Raft (near docks)
+  - Build Ferry (at specific dock locations)
+  - Build Steamboat (unlocks after 5 successful trades)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Tips for Players
+- Start by gathering wood from trees
+- Build a raft to cross the river
+- Trade corn and textiles between banks to make money
+- Watch out for the river current when rafting
+- Save up for the steamboat to unlock new regions
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Common Issues
+1. If components aren't styled correctly, make sure your project includes Tailwind CSS setup
+2. If the UI components aren't found, verify the shadcn/ui installation
+3. Make sure all imports are pointing to the correct locations in your project structure

@@ -1,6 +1,7 @@
 {
   "name": "green-river-demo",
   "version": "0.1.0",
+  "homepage": "https://rexeven7.github.io/green-river-demo",
   "private": true,
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.1",
@@ -21,7 +22,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build:css": "tailwindcss build src/index.css -o dist/index.css"
+    "build:css": "tailwindcss build src/index.css -o dist/index.css",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
